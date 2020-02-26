@@ -6,18 +6,7 @@
   "scripts": {
     "test": "jest"
   },
-  "lint-staged": {
-    "*.js": [
-      "standard --fix",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "author": "",
+  "author": "Micael Pereira",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {
