@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "nodemon index.js"
+    "test": "jest --watchAll",
+    "test:staged": "jest",
+    "dev": "nodemon src/index.js"
   },
   "standard": {
     "env": ["jest"]
