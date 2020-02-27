@@ -1,3 +1,7 @@
+/*
+
+ATTENTION: THE FOLLOWING CODE IS AN EXAMPLE OF HOW WE CAN UNPLUG OUR PROJECT, WHETHER IT IS NOT WORKING
+*/
 const express = require('express')
 const router = express.Router()
 const mongoose = require('mongoose')

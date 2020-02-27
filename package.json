@@ -7,6 +7,9 @@
     "test": "jest",
     "dev": "nodemon index.js"
   },
+  "standard": {
+    "env": ["jest"]
+  },
   "author": "Micael Pereira",
   "license": "ISC",
   "dependencies": {
