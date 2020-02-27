@@ -4,15 +4,32 @@ const mongoose = require('mongoose')
 const AccountModel = mongoose.model('Account')
 
 module.exports = () => {
-  router.post('signup', new SignUpRouter().route)
+  const route = new SignUpRouter()
+  router.post('signup', ExpressRouterAdapter.adapt(route))
+}
+
+// Adapter
+class ExpressRouterAdapter {
+  static adapt (router) {
+    return async (req, res) => {
+      const httpRequest = {
+        body: req.body
+      }
+      const httpResponse = await router.route(httpRequest)
+      res.status(httpResponse.statusCode).json(httpResponse.body)
+    }
+  }
 }
 
 // Route
 class SignUpRouter {
-  async route (req, res) {
-    const { email, password, repeatPassword } = req.body
-    new SignUpUseCase().signUp(email, password, repeatPassword)
-    res.status(400).json({ error: 'password must be equal to repeatPassword' })
+  async route (httpRequest) {
+    const { email, password, repeatPassword } = httpRequest.body
+    const user = new SignUpUseCase().signUp(email, password, repeatPassword)
+    return {
+      statusCode: 200,
+      body: user
+    }
   }
 }
 
