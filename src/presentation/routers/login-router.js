@@ -36,6 +36,7 @@ class LoginRouter {
       return HttpResponse.ok({ accessToken })
     } catch (error) {
       // TODO: Insert log to report the error that occurred
+      console.error(error)
       return HttpResponse.serverError()
     }
   }
