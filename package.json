@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest --watch --silent --noStackTrace",
     "test:staged": "jest --passWithNoTests --findRelatedTests --silent --noStackTrace",
+    "test:ci": "jest --coverage",
     "dev": "nodemon src/index.js"
+
   },
   "standard": {
     "env": ["jest"]
