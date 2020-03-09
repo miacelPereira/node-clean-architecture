@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTest",
+    "test": "jest --passWithNoTests --watch --noStackTrace  --runInBand",
     "test:staged": "jest --passWithNoTests"
   },
   "keywords": [],
